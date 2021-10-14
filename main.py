@@ -14,7 +14,7 @@ class FallingObject(pygame.sprite.Sprite):
         self.rect.x = random.randint(0,670)
         self.rect.y = 0
 
-    def setImage(selfself,graphicSelected):
+    def setImage(self,graphicSelected):
         fallingObjectsImage = pygame.image.load(graphicSelected)
         self.image.blit(fallingObjectsImage,(0,0))
 pygame.init()
