@@ -17,6 +17,11 @@ class FallingObject(pygame.sprite.Sprite):
     def setImage(self,graphicSelected):
         fallingObjectsImage = pygame.image.load(graphicSelected)
         self.image.blit(fallingObjectsImage,(0,0))
+
+    def moveFallingObjects(self,distance):
+        if self.rect.y <= 470:
+              self.rect.y = self.rect.y + distance
+
 pygame.init()
 # Pygame is initialised (starts running)
 
@@ -42,6 +47,11 @@ while done == False:
     nextObject.setImage("Apple.png")
 
     allFallingObjects.add(nextObject)
+
+
+    for eachObject in (allFallingObjects.sprites()):
+        eachObject.moveFallingObjects(5)
+
 
     screen.blit(background_image,  [0,0])
     allFallingObjects.draw(screen)
