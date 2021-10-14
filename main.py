@@ -4,7 +4,7 @@ import pygame                               # Imports pygame and other libraries
 import random
 # Define Classes (sprites) here
 class FallingObject(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self) -> object:
         pygame.sprite.Sprite.__init__(self)
         self.timecreated = pygame.time.get_ticks()
         self.image = pygame.Surface([30,30])
